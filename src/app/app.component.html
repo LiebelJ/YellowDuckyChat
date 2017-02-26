@@ -1,0 +1,33 @@
+<header>
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+      <a routerLink="/" routerLinkActive="active" 
+        [routerLinkActiveOptions]="{ exact: true }" class="navbar-brand">
+        <div class="DuckyTitle">
+        YellowDucky
+        </div>
+      </a>
+    </div>
+
+    <ul class="nav navbar-nav">
+      <li><a routerLink="/" routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
+      <li><a routerLink="/chatroom" routerLinkActive="active" >Chat Room</a></li>
+      <li><a routerLink="/about" routerLinkActive="active" >about</a></li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li><a routerLink="/dashboard">Dashboard</a></li>
+    </ul>
+
+  </div>
+  </nav>
+</header>
+
+<main>
+
+  <router-outlet></router-outlet>
+
+</main>
