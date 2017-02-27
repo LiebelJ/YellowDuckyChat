@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import {TranslateService} from 'ng2-translate';
+
 @Component({
   selector: 'app-root',
   styles: [`
@@ -15,4 +17,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   message = 'This is the sample message.';
+
+  param = {value:''};
+  constructor(translate: TranslateService) {  
+        translate.use('fr');
+  }
 }

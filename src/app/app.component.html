@@ -13,13 +13,13 @@
 
     <ul class="nav navbar-nav">
       <li><a routerLink="/" routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
-      <li><a routerLink="/chatroom" routerLinkActive="active" >Chat Room</a></li>
-      <li><a routerLink="/about" routerLinkActive="active" >about</a></li>
+            [routerLinkActiveOptions]="{ exact: true }">{{ 'HOME' | translate:param }}</a></li>
+      <li><a routerLink="/chatroom" routerLinkActive="active">{{ 'CHAT' | translate:param }}</a></li>
+      <li><a routerLink="/about" routerLinkActive="active">{{ 'ABOUT' | translate:param }}</a></li>
     </ul>
 
     <ul class="nav navbar-nav navbar-right">
-      <li><a routerLink="/dashboard">Dashboard</a></li>
+      <li><a routerLink="/dashboard">{{ 'DASHBOARD' | translate:param }}</a></li>
     </ul>
 
   </div>

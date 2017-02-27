@@ -1,3 +1,14 @@
 {
-    "HELLO": "bonjour {{value}}"
+    // Nav bar
+    "HOME":"Accueil",
+    "CHAT":"Chatter",
+    "ABOUT":"A propos",
+    "DASHBOARD":"Tableau de bord",
+    // home page
+    "HELLO": "bonjour",
+    "":"",
+    // dashboard
+    "Welcome2Dashboard":"Bienvenue dans le tableau de bord",
+    "ManageUsers":"gérer les utilisateurs",
+    "ManageChats":"gérer"
 }
