@@ -11,7 +11,7 @@ https://nodejs.org/en/download/
 $ node --version
 v6.9.1
 $ npm --version
-3.10.8
+3.10.3
 ```
 
 ## Angular-cli
