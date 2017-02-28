@@ -20,5 +20,5 @@ https://cli.angular.io/
 ### Version
 ```
 $ ng --version
-@angular/cli: 1.0.0-beta.32.3
+@angular/cli: 1.0.0-beta.28.3
 ```
