@@ -1,5 +1,15 @@
 {
   "typescript.tsdk": "./node_modules/typescript/lib",
+  "angulardoc.repoId": "89c5e807-4643-487b-b366-9b9ddb508709",
+  "angulardoc.directoryFilter": [
+    "!typings",
+    "!node_modules",
+    "!.vscode"
+  ],
+  "angulardoc.fileFilter": [
+    "**/!(*.*spec).ts"
+  ],
+  "angulardoc.lastSync": 1488316019398,
   "files.exclude": {
     "dist": "explorerExcludedFiles",
     "tmp": "explorerExcludedFiles",
