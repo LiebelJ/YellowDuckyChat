@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import {TranslateService} from 'ng2-translate';
+// import {TranslateService} from 'ng2-translate';
 
 @Component({
   selector: 'app-root',
@@ -18,8 +18,8 @@ import {TranslateService} from 'ng2-translate';
 export class AppComponent {
   message = 'This is the sample message.';
 
-  param = {value:''};
-  constructor(translate: TranslateService) {  
-        translate.use('fr');
-  }
+  // param = {value:''};
+  // constructor(translate: TranslateService) {  
+  //        translate.use('fr');
+  // }
 }

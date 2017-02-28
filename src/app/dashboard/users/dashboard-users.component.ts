@@ -4,7 +4,8 @@ import { UserService } from '../../shared/services/user.service';
 
 @Component({
   template: `
-    <h2>Users Section</h2>
+    
+    <h2>{{ 'UsersSection' | translate:param }}</h2>
     <p>Manage your users.</p>
 
     <div class="row">

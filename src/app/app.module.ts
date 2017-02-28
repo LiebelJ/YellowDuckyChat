@@ -51,6 +51,6 @@ export class AppModule {
         translate.setDefaultLang('en');
  
          // the lang to use, if the lang isn't available, it will use the current loader to get them
-        translate.use('fr');
+         translate.use('fr');
   }
 }
