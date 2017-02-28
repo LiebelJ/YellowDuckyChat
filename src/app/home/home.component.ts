@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
   template: `
     i am the home page
     <div>{{ 'HELLO' | translate:param }}</div>
+
+    <h1>Login</h1>
   `
 })
 export class HomeComponent {

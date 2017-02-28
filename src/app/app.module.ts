@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { appRouting } from './app.routing';
 import { AppComponent } from './app.component';
+import { LangComponent } from './lang/lang.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -36,7 +37,8 @@ export function createTranslateLoader(http: Http) {
     HomeComponent,
     ContactComponent,
     NotFoundComponent,
-    ChatroomComponent
+    ChatroomComponent,
+    LangComponent
   ],
   providers: [
     AuthGuard,
