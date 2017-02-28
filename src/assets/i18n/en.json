@@ -1,9 +1,14 @@
 {
+    "-NavBar":"---------------------",
     "HOME":"Home",
     "CHAT":"Chat room",
     "ABOUT":"About",
     "DASHBOARD":"Dashboard",
+    "-HomePage":"---------------------",
     "HELLO": "hello",
-    "Welcome2Dashboard": "test dashboard EN",
-    "UsersSection": "Users Section EN"
+    "-ChatRoom":"---------------------",
+    "-AboutPage":"---------------------",
+    "-DashBoard":"---------------------",
+    "Welcome2Dashboard": "Welcome to the dashboard",
+    "UsersSection": "Users Section"
 }
