@@ -4,12 +4,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'home-page',
-  template: `
-    i am the home page
-    <div>{{ 'HELLO' | translate:param }}</div>
-
-    <h1>Login</h1>
-  `
+  templateUrl: './home.component.html'
 })
 export class HomeComponent {
   // param = {value:''};
