@@ -1,0 +1,14 @@
+{
+    "-NavBar":"---------------------",
+    "HOME":"Accueil",
+    "CHAT":"Chatter",
+    "ABOUT":"A propos",
+    "DASHBOARD":"Tableau de bord",
+    "-HomePage":"---------------------",
+    "HELLO": "bonjour",
+    "-ChatRoom":"---------------------",
+    "-AboutPage":"---------------------",
+    "-DashBoard":"---------------------",
+    "Welcome2Dashboard": "Bienvenue sur le tableau de bord",
+    "UsersSection": "Section Utilisateurs"
+}

@@ -1,0 +1,7 @@
+<a (click)="goBack()" class="btn btn-sm btn-info">Go Back</a>
+<div class="jumbotron text-center" *ngIf="user">
+  <h1>{{ user.name }} ({{ user.username }})</h1>
+  <h6>age : {{ user.age }}</h6>
+
+  <img [src]="user.avatar" class="img-responsive img-circle">
+</div>
