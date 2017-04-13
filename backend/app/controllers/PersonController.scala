@@ -90,4 +90,21 @@ class PersonController @Inject()(val reactiveMongoApi: ReactiveMongoApi)(implici
       Ok(Json.toJson(persons))
     }
   }
+
+  def findAll() = Action.async {
+    // let's do our query
+    val cursor: Future[List[JsObject]] = personsFuture.flatMap{ persons =>
+      // find all people with name `name`
+      persons.find(Json.obj()).
+        // sort them by creation date
+        sort(Json.obj("created" -> -1)).
+        // perform the query and get a cursor of JsObject
+        cursor[JsObject](ReadPreference.primary).collect[List]()
+    }
+
+    // everything's ok! Let's reply with a JsValue
+    cursor.map { persons =>
+      Ok(Json.toJson(persons))
+    }
+  }
 }
