@@ -12,6 +12,9 @@ import { AuthGuard } from './shared/guards/auth-guard.service';
 import { CanDeactivateGuard } from './shared/guards/can-deactivate-guard.service';
 import { ChatroomComponent } from './chatroom/chatroom.component';
 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MdButtonModule, MdCheckboxModule} from '@angular/material';
+
 import {HttpModule, Http} from '@angular/http';
 import {TranslateModule, TranslateLoader, TranslateStaticLoader, TranslateService} from 'ng2-translate';
 
@@ -26,6 +29,9 @@ export function createTranslateLoader(http: Http) {
     appRouting,
     DashboardModule,
     HttpModule,
+    BrowserAnimationsModule,
+    MdButtonModule, 
+    MdCheckboxModule,
     TranslateModule.forRoot({
             provide: TranslateLoader,
             useFactory: (createTranslateLoader),
