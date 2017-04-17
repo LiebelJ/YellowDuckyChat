@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+
+import { ChatroomService } from '../shared/services/chatroom.service';
+
 @Component({
   selector: 'app-chatroom',
   templateUrl: './chatroom.component.html',
@@ -8,12 +11,20 @@ import { Component, OnInit } from '@angular/core';
 export class ChatroomComponent implements OnInit {
   
   chatrooms=[];
+  chats=[];
 
-  constructor() { }
+  constructor(private chatroomService: ChatroomService) { }
   
   ngOnInit() {
     this.initChatrooms();
+    this.getPersons();
   }
+
+
+  getPersons(){
+    this.chats = this.chatroomService.getPersons();
+  }
+
 
   public initChatrooms(){
     this.chatrooms=[

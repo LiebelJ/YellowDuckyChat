@@ -12,6 +12,8 @@ import { AuthGuard } from './shared/guards/auth-guard.service';
 import { CanDeactivateGuard } from './shared/guards/can-deactivate-guard.service';
 import { ChatroomComponent } from './chatroom/chatroom.component';
 
+import { ChatroomService } from './shared/services/chatroom.service';
+
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MdButtonModule, MdCheckboxModule} from '@angular/material';
 
@@ -48,7 +50,8 @@ export function createTranslateLoader(http: Http) {
   ],
   providers: [
     AuthGuard,
-    CanDeactivateGuard
+    CanDeactivateGuard,
+    ChatroomService
   ],
   bootstrap: [ AppComponent ]
 })
