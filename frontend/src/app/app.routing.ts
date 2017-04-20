@@ -19,10 +19,10 @@ const appRoutes: Routes = [
     path: 'chatroom',
     component: ChatroomComponent
   },
-  {
-    path: 'about',
-    loadChildren: './about/about.module#AboutModule'
-  },
+  // {
+  //   path: 'about',
+  //   loadChildren: './about/about.module#AboutModule'
+  // },
   { path: 'contact', component: ContactComponent },
   { path: '**', component: NotFoundComponent }
 ];

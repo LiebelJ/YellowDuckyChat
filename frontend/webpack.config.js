@@ -41,7 +41,10 @@ const metadata = {
   entry: {
     'main' : './src/main.ts',
     'polyfills' : './src/polyfills.ts',
-    'vendor'    : './src/vendor.ts'
+    'vendor'    : './src/vendor.ts',
+    'about'       : './src/app/about/about.module.ts',
+    'chatroom'       : './src/app/chatroom/chatroom.module.ts',
+    'dashboard'   : './src/app/dashboard/dashboard.module.ts'
   },
   output: {
     filename: '[name].js',
