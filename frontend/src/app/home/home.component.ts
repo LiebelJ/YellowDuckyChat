@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 // import {TranslateService} from 'ng2-translate';
 
@@ -7,9 +8,12 @@ import { Component } from '@angular/core';
   templateUrl: './home.component.html'
 })
 export class HomeComponent {
-  // param = {value:''};
-  // constructor(translate: TranslateService) {  
+ public username: string;
 
-  // }
+constructor(private router: Router) { }
 
+  connect(){
+    console.log("> " + this.username);
+      this.router.navigateByUrl('/chatroom');
+  }
 }
