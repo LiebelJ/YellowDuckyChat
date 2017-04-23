@@ -1,40 +1,54 @@
 import { Injectable } from '@angular/core';
-import { User } from '../models/user';
+import { Http, Response, Headers } from "@angular/http";
 
+import "rxjs/Rx";
 
-const usersPromise: Promise<User[]> = Promise.resolve([
-  {
-    id: 1,
-    name: 'Chris',
-    username: 'sevilayha',
-    avatar: 'https://pbs.twimg.com/profile_images/826500112549502976/kSENS3xJ_400x400.jpg',
-    age: 12
-  },
-  {
-    id: 2,
-    name: 'Nick',
-    username: 'whatnicktweets',
-    avatar: 'https://pbs.twimg.com/profile_images/502500686588690432/wXBzuCBj_400x400.jpeg',
-    age: 13
-  },
-  {
-    id: 3,
-    name: 'Holly',
-    username: 'hollylawly',
-    avatar: 'https://pbs.twimg.com/profile_images/721918869821005824/2qT_RY5M_400x400.jpg',
-    age: 14
-  }
-]);
 
 @Injectable()
 export class UserService {
-users: Array<any>;
-currentUser: string;
+  persons: Array<any> = [];
 
+    constructor(private http: Http) { 
+        
+    }
+  
+  getChat(){
+        console.log("fetching");
+        this.http.get("/api/chat/download")
+        .map( result => result.json())
+        .subscribe(
+            result => {
+                this.persons.push((result));
+            },
+            error => {
+                console.error(error);
+            }
+        );
+     return this.persons;
+    }
 
-  setUser(username){
+    sendChat(data){
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded');
+
+        let body = 'author='+data.author+'&message='+data.message+'&timestamp='+data.timestamp;
+
+       console.log(data);
+
+        return this.http.post("/api/chat/upload", body, { headers: headers })
+        .subscribe(data=> {
+            alert('ok');
+        },
+        error => {
+            console.log("error");
+        });       
+    }
+
+    currentUser: string = "User";
+    setUser(username){
     this.currentUser = username;
     // this.users.push(this.currentUser);
   }
-
 }
+
+  
