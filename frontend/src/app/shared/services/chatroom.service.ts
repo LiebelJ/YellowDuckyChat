@@ -8,9 +8,9 @@ export class ChatroomService {
     private listener: EventEmitter<any> = new EventEmitter();
  
     public constructor() {
-        // this.socket = new WebSocket("ws://localhost:9000/api/message");
+        // this.socket = new WebSocket("ws://ws:8888");
         // this.socket = new WebSocket("ws://echo.websocket.org/");
-        this.socket = new WebSocket("ws://ws:8888","echo-protocol");
+        this.socket = new WebSocket("ws://aws.yellowducky.co:8888","echo-protocol");
         // this.socket.onopen = event => {
         //     this.listener.emit({"type": "open", "data": event});
         // }
