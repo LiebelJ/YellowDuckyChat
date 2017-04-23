@@ -1,0 +1,12 @@
+{
+  "name": "nodejs-web-app2",
+  "version": "0.0.0",
+  "description": "NodejsWebApp2",
+  "main": "server.js",
+  "author": {
+    "name": "Julien"
+  },
+  "dependencies": {
+    "websocket": "^1.0.24"
+  }
+}
