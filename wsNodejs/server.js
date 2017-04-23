@@ -1,4 +1,4 @@
-//#!/usr/bin/env node
+#!/usr/bin/env node
 var WebSocketServer = require('websocket').server;
 var http = require('http');
 
@@ -24,7 +24,7 @@ wsServer = new WebSocketServer({
 
 function originIsAllowed(origin) {
     // put logic here to detect whether the specified origin is allowed. 
-    valid_origins = ['http://localhost:4200','http://localhost:9000', '127.0.0.1','http://aws.yellowducky.co:8080'];
+    valid_origins = ['http://localhost:4200','http://localhost:9000', '127.0.0.1','127.20.0.4','http://aws.yellowducky.co:8080'];
     if (valid_origins.indexOf(origin) != -1) {
         console.log('Connection accepted from origin ' + origin);
         return true;
