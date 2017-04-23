@@ -13,8 +13,8 @@
 
     <ul class="nav navbar-nav">
       <li><a routerLink="/" routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: true }">{{ 'HOME' | translate:param }}</a></li>
-      <li><a routerLink="/chatroom" routerLinkActive="active">{{ 'CHAT' | translate:param }}</a></li>
+            [routerLinkActiveOptions]="{ exact: true }" class="glyphicon glyphicon-home"> {{ 'HOME' | translate:param }}</a></li>
+      <li><a routerLink="/chatroom" routerLinkActive="active" class="glyphicon glyphicon-comment"> {{ 'CHAT' | translate:param }}</a></li>
       <!--<li><a routerLink="/about" routerLinkActive="active" class="disabled">{{ 'ABOUT' | translate:param }}</a></li>-->
     </ul>
 

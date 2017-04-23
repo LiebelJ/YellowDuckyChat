@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 
 import { ChatroomService } from '../shared/services/chatroom.service';
+import { WebsocketService } from '../shared/services/websocket.service';
 
 @Component({
   selector: 'app-chatroom',
@@ -10,28 +11,44 @@ import { ChatroomService } from '../shared/services/chatroom.service';
 })
 export class ChatroomComponent implements OnInit {
   
-  chatrooms=[];
-  chats=[];
+  chatBox: string;
+  messages: Array<any>;
+  temp: Array<any>;
 
-  constructor(private chatroomService: ChatroomService) { }
+
+  constructor(private chatroomService: ChatroomService, private socket: WebsocketService) {
+    this.chatBox= "";
+    this.messages = [];
+    this.temp = [];
+
+    // chatroomService.getEventListener().subscribe(msg => {
+    //   this.messages.push(msg)
+    //   console.log("msg :" + msg.message)
+    // });
+   }
   
   ngOnInit() {
-    this.initChatrooms();
-    this.getPersons();
+    this.chatroomService.getEventListener().subscribe(event => {
+            if(event.type == "message") {
+                this.messages.push(event.data);                
+            }
+            // if(event.type == "close") {
+            //     this.messages.push("/The socket connection has been closed");
+            // }
+            // if(event.type == "open") {
+            //     this.messages.push("/The socket connection has been established");
+            // }
+      });
   }
 
+  send(){
+    if(this.chatBox){
+      console.log("sending: " + this.chatBox);
+      // this.chatroomService.messages.next({"author":"test","message":this.chatBox,"timestamp": new Date().toString()});
+      this.chatroomService.send(JSON.stringify({"author":"test","message":this.chatBox,"timestamp": new Date().toString()}));
 
-  getPersons(){
-    this.chats = this.chatroomService.getPersons();
-  }
-
-
-  public initChatrooms(){
-    this.chatrooms=[
-      {"id":"1","name":"Chat 1","img":"http://dev.yellowducky.co/YellowDuckySmall.png"},
-      {"id":"2","name":"Chat 2","img":"http://dev.yellowducky.co/YellowDuckySmall.png"},
-      {"id":"3","name":"Chat 3","img":"http://dev.yellowducky.co/YellowDuckySmall.png"}
-    ];
+      this.chatBox= "";
+    }
   }
 
 }

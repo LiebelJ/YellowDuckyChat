@@ -13,7 +13,9 @@ export class HomeComponent {
 constructor(private router: Router) { }
 
   connect(){
-    console.log("> " + this.username);
+    if(this.username){
+      console.log("> " + this.username);
       this.router.navigateByUrl('/chatroom');
+    }
   }
 }
