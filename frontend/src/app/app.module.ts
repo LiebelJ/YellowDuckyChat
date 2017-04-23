@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { DashboardModule } from './dashboard/dashboard.module';
+// import { DashboardModule } from './dashboard/dashboard.module';
 import { appRouting } from './app.routing';
 import { AppComponent } from './app.component';
 import { LangComponent } from './lang/lang.component';
@@ -14,6 +14,7 @@ import { ChatroomComponent } from './chatroom/chatroom.component';
 
 import { ChatroomService } from './shared/services/chatroom.service';
 import { WebsocketService } from './shared/services/websocket.service';
+import { UserService } from './shared/services/user.service';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MdButtonModule, MdCheckboxModule} from '@angular/material';
@@ -30,7 +31,7 @@ export function createTranslateLoader(http: Http) {
     BrowserModule,
     FormsModule,
     appRouting,
-    DashboardModule,
+    // DashboardModule,
     HttpModule,
     BrowserAnimationsModule,
     MdButtonModule, 
@@ -53,7 +54,8 @@ export function createTranslateLoader(http: Http) {
     AuthGuard,
     CanDeactivateGuard,
     ChatroomService,
-    WebsocketService
+    WebsocketService,
+    UserService
   ],
   bootstrap: [ AppComponent ]
 })

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { User } from '../models/user';
 
+
 const usersPromise: Promise<User[]> = Promise.resolve([
   {
     id: 1,
@@ -27,23 +28,13 @@ const usersPromise: Promise<User[]> = Promise.resolve([
 
 @Injectable()
 export class UserService {
+users: Array<any>;
+currentUser: string;
 
-  // get all users
-  getUsers() {
-    return usersPromise;
-  }
 
-  // find a specific user
-  getUser(username) {
-    return usersPromise.then(users => users.find(user => user.username === username));
-
-    // let user = usersPromise.then(users => {
-    //   return users.find(user => {
-    //     return user.username === username;
-    //   });
-    // });
-
-    // return user;
+  setUser(username){
+    this.currentUser = username;
+    // this.users.push(this.currentUser);
   }
 
 }

@@ -6,7 +6,7 @@
     <div class="panel-body">
        <div *ngFor="let message of messages">
         <div class="well">  
-          {{message.message}}
+          {{message.author}}: {{message.message}}
         </div>
         <span class="timestramp">
           {{message.timestamp | date: 'dd/MM/yyyy'}}

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-
+import { UserService } from '../shared/services/user.service';
 import { ChatroomService } from '../shared/services/chatroom.service';
 import { WebsocketService } from '../shared/services/websocket.service';
 
@@ -16,7 +16,7 @@ export class ChatroomComponent implements OnInit {
   temp: Array<any>;
 
 
-  constructor(private chatroomService: ChatroomService, private socket: WebsocketService) {
+  constructor(private chatroomService: ChatroomService, private userService: UserService) {
     this.chatBox= "";
     this.messages = [];
     this.temp = [];
@@ -45,7 +45,7 @@ export class ChatroomComponent implements OnInit {
     if(this.chatBox){
       console.log("sending: " + this.chatBox);
       // this.chatroomService.messages.next({"author":"test","message":this.chatBox,"timestamp": new Date().toString()});
-      this.chatroomService.send(JSON.stringify({"author":"test","message":this.chatBox,"timestamp": new Date().toString()}));
+      this.chatroomService.send(JSON.stringify({"author":this.userService.currentUser,"message":this.chatBox,"timestamp": new Date().toString()}));
 
       this.chatBox= "";
     }
