@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-// import { DashboardModule } from './dashboard/dashboard.module';
+
 import { appRouting } from './app.routing';
 import { AppComponent } from './app.component';
 import { LangComponent } from './lang/lang.component';
@@ -13,7 +13,7 @@ import { CanDeactivateGuard } from './shared/guards/can-deactivate-guard.service
 import { ChatroomComponent } from './chatroom/chatroom.component';
 
 import { ChatroomService } from './shared/services/chatroom.service';
-import { WebsocketService } from './shared/services/websocket.service';
+
 import { UserService } from './shared/services/user.service';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -54,7 +54,6 @@ export function createTranslateLoader(http: Http) {
     AuthGuard,
     CanDeactivateGuard,
     ChatroomService,
-    WebsocketService,
     UserService
   ],
   bootstrap: [ AppComponent ]
