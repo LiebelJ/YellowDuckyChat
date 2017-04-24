@@ -29,13 +29,13 @@ export class UserService {
 
     sendChat(data){
         var headers = new Headers();
-        headers.append('Content-Type', 'application/x-www-form-urlencoded');
+        headers.append('Content-Type', 'application/json');
 
         let body = 'author='+data.author+'&message='+data.message+'&timestamp='+data.timestamp;
 
        console.log(data);
 
-        return this.http.post("/api/chat/upload", body, { headers: headers })
+        return this.http.post("/api/chat/upload", data, { headers: headers })
         .subscribe(data=> {
             alert('ok');
         },

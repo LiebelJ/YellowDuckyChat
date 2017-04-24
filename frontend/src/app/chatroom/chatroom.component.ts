@@ -47,7 +47,7 @@ export class ChatroomComponent implements OnInit {
       var data= {"author":this.userService.currentUser,"message":this.chatBox,"timestamp": new Date().toString()}
       // this.chatroomService.messages.next({"author":"test","message":this.chatBox,"timestamp": new Date().toString()});
       this.chatroomService.send(JSON.stringify(data));
-      this.userService.sendChat(data);
+      this.userService.sendChat(JSON.stringify(data));
       this.chatBox= "";
     }
   }
