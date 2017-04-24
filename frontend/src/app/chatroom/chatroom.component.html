@@ -15,9 +15,9 @@
               
     </div>
       <div class="panel-footer input-group">
-        <input type="text" class="form-control" placeholder="Type a message here..." [(ngModel)]="chatBox">
+        <input type="text" class="form-control" placeholder="Type a message here..." [(ngModel)]="chatBox" (keyup.enter)="send()">
         <span class="input-group-btn">
-          <button class="btn btn-default glyphicon glyphicon-send" type="button" (click)="send()" (keyup.enter)="send()"></button>
+          <button class="btn btn-default glyphicon glyphicon-send" type="button" (click)="send()" ></button>
         </span>
       </div>
        

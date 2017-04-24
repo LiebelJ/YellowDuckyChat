@@ -2,7 +2,7 @@
   <div class="col-md-6 col-md-offset-3">
     <div class="form-group">
     <h3>Please choose a username:</h3>
-      <input type="text" [(ngModel)]="username" class="form-control">
+      <input type="text" [(ngModel)]="username" class="form-control" (keyup.enter)="connect()">
       <button class="btn btn-lg btn-primary btn-block" (click)="connect()">Connect</button>
     </div>
         
