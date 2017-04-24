@@ -1,4 +1,4 @@
-POST     /api/chat/upload               controllers.ChatController.create(author: String, message: String,timestamp: String)
+POST     /api/chat/upload               controllers.ChatController.createFromJson
 GET      /api/chat/download             controllers.ChatController.findAll()
 
 POST     /api/persons/add               controllers.PersonController.create(name: String, age: Int)
@@ -14,4 +14,4 @@ GET     /                               controllers.HomeController.index
 GET     /chatroom                       controllers.HomeController.index
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+GET     /assets/*file                   controllers.Assets.versioned(path="/public", file: Asset)

@@ -22,24 +22,27 @@ import scala.concurrent.{ExecutionContext, Future}
 class ChatController @Inject()(val reactiveMongoApi: ReactiveMongoApi)(implicit exec: ExecutionContext) extends Controller with MongoController with ReactiveMongoComponents {
 
   val transformer: Reads[JsObject] =
-    Reads.jsPickBranch[JsString](__ \ "name") and
-      Reads.jsPickBranch[JsNumber](__ \ "age") and
-      Reads.jsPut(__ \ "created", JsNumber(new java.util.Date().getTime())) reduce
+    Reads.jsPickBranch[JsString](__ \ "author") and
+      Reads.jsPickBranch[JsString](__ \ "message") and
+      Reads.jsPickBranch[JsString](__ \ "timestamp") reduce
 
   def chatsFuture: Future[JSONCollection] = database.map(_.collection[JSONCollection]("chat_history"))
 
-  def create(author: String, message: String,timestamp: String) = Action.async {
-    println("test")
-    val json = Json.obj(
-      "author" -> author,
-      "message" -> message,
-      "timestamp" -> timestamp)
 
-    for {
-      chats <- chatsFuture
-      lastError <- chats.insert(json)
-    } yield Ok("Mongo LastError: %s".format(lastError))
-
+  def createFromJson = Action.async(parse.json) { request =>
+    request.body.transform(transformer) match {
+      case JsSuccess(chat, _) =>
+        for {
+          chats <- chatsFuture
+          lastError <- chats.insert(chat)
+        }
+          yield {
+            Logger.debug(s"Successfully inserted with LastError: $lastError")
+            Created("Created 1 person")
+          }
+      case _ =>
+        Future.successful(BadRequest("invalid json"))
+    }
   }
 
   def findByName(name: String) = Action.async {
