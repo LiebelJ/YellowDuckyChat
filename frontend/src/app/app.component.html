@@ -1,39 +1,26 @@
 <header>
   <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-
-    <div class="navbar-header">
-      <a routerLink="/" routerLinkActive="active" 
-        [routerLinkActiveOptions]="{ exact: true }" class="navbar-brand">
-        <div class="DuckyTitle">
-        YellowDucky
-        </div>
-      </a>
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a routerLink="/" routerLinkActive="active" 
+          [routerLinkActiveOptions]="{ exact: true }" class="navbar-brand">
+          <div class="DuckyTitle">
+          YellowDucky
+          </div>
+        </a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a routerLink="/" routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }" class="glyphicon glyphicon-home"> {{ 'HOME' | translate:param }}</a></li>
+        <li><a routerLink="/chatroom" routerLinkActive="active" class="glyphicon glyphicon-comment"> {{ 'CHAT' | translate:param }}</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a (click)="selectLang()"><div class="glyphicon glyphicon-globe"></div></a></li>    
+      </ul>
     </div>
-
-    <ul class="nav navbar-nav">
-      <li><a routerLink="/" routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: true }" class="glyphicon glyphicon-home"> {{ 'HOME' | translate:param }}</a></li>
-      <li><a routerLink="/chatroom" routerLinkActive="active" class="glyphicon glyphicon-comment"> {{ 'CHAT' | translate:param }}</a></li>
-      <!--<li><a routerLink="/about" routerLinkActive="active" class="disabled">{{ 'ABOUT' | translate:param }}</a></li>-->
-    </ul>
-
-    <ul class="nav navbar-nav navbar-right">
-      <!--<li><a routerLink="/lang" routerLinkActive="active"><div class="glyphicon glyphicon-globe"></div></a></li>-->
-      
-      <!--<li><a routerLink="/dashboard">{{ 'DASHBOARD' | translate:param }}</a></li>-->
-    </ul>
-
-  </div>
   </nav>
 </header>
-
   
-  <!--<button type="button" class="btn btn-default" (click)="test('fr')">button</button>-->
-  
-
 <main>
-
   <router-outlet></router-outlet>
-
 </main>

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 import { LangService } from '../shared/services/lang.service';
+import {MdDialog, MdDialogRef} from '@angular/material';
+
+import {TranslateService} from 'ng2-translate';
 
 @Component({
   selector: 'app-lang',
@@ -9,16 +12,15 @@ import { LangService } from '../shared/services/lang.service';
 })
 export class LangComponent implements OnInit {
 
-  // constructor(private langService: LangService) {this.langService = langService }
-
+  constructor(private langService: LangService, private _dialog: MdDialog, private translateService: TranslateService) {this.langService = langService }
+  
+  langList =[];
   ngOnInit() {
-    this.initData(); //create list
+    this.langList = this.langService.langList;
   }
-
-initData(){
-    // this.langService.langList=[
-    //   {"codename":"fr","fullname":"Francais","icon":"http://yellowducky.co/flags/fr.gif"},
-    //   {"codename":"en","fullname":"English","icon":"http://yellowducky.co/flags/us.gif"},
-    // ]
-}
+  selectLang(langCode: string){
+    this.langService.activeLang = langCode;
+    this.translateService.use(langCode);
+    this._dialog.closeAll();
+  }
 }

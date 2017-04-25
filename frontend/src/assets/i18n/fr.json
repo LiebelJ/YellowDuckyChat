@@ -2,13 +2,11 @@
     "-NavBar":"---------------------",
     "HOME":"Accueil",
     "CHAT":"Chatter",
-    "ABOUT":"A propos",
-    "DASHBOARD":"Tableau de bord",
     "-HomePage":"---------------------",
-    "HELLO": "bonjour",
+    "PickUsername": "Choisissez un nom d'utilisateur:",
+    "Connect": "Connecter",
     "-ChatRoom":"---------------------",
-    "-AboutPage":"---------------------",
-    "-DashBoard":"---------------------",
-    "Welcome2Dashboard": "Bienvenue sur le tableau de bord",
-    "UsersSection": "Section Utilisateurs"
+    "ChatPlaceHolder":"Tapez un message ici ...",
+    "-Lang":"---------------------",
+    "Lang":"Choisissez votre langue"
 }

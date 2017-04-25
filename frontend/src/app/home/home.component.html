@@ -1,13 +1,9 @@
 <div class="container">
   <div class="col-md-6 col-md-offset-3">
     <div class="form-group">
-    <h3>Please choose a username:</h3>
+    <h3>{{ 'PickUsername' | translate:param }}</h3>
       <input type="text" [(ngModel)]="username" class="form-control" (keyup.enter)="connect()">
-      <button class="btn btn-lg btn-primary btn-block" (click)="connect()">Connect</button>
-    </div>
-        
-      
+      <button class="btn btn-lg btn-primary btn-block" (click)="connect()">{{ 'Connect' | translate:param }}</button>
+    </div>   
   </div>
 </div>
-    
-<div>{{ 'HELLO' | translate:param }}</div>

@@ -1,16 +1,11 @@
-<div class="container">
-
-<h1>Choose your language</h1>
-
-<!--<div *ngFor="let lang of langList">
-  <ul>
-    <li>
-      
-      <span>{{lang.fullname}}</span>
-    </li>
-  </ul>
-
-      </div>-->
-  
+<div class="jumbotron">
+  <div class="container">
+    <h2 class="text-center">{{ 'Lang' | translate:param }}</h2>      
+    <div *ngFor="let lang of langList">
+      <button type="button" class="btn btn-default btn-set" (click)="selectLang(lang.codename)">
+        <img src={{lang.icon}} class="img-responsive" alt="Image">
+        {{lang.fullname}}
+      </button>         
+    </div>   
+  </div>
 </div>
-

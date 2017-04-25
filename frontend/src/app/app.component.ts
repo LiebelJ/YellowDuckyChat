@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-
 import {TranslateService} from 'ng2-translate';
+
+import {MdDialog, MdDialogRef,MdSnackBar} from '@angular/material';
+import { LangComponent } from './lang/lang.component';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +18,16 @@ import {TranslateService} from 'ng2-translate';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  message = 'This is the sample message.';
- 
+
+  selectedLang: string;
+
+  constructor(public dialog: MdDialog, private _snackbar: MdSnackBar) {}
+  
+  selectLang(){
+    let dialoRef = this.dialog.open(LangComponent);
+      dialoRef.afterClosed().subscribe(result => {
+    this.selectedLang = result;
+    this._snackbar.open('Ok!'+'', 'X'); 
+    })
+  }
 }

@@ -1,14 +1,12 @@
 {
     "-NavBar":"---------------------",
     "HOME":"Home",
-    "CHAT":"Chat room",
-    "ABOUT":"About",
-    "DASHBOARD":"Dashboard",
+    "CHAT":"Chat",
     "-HomePage":"---------------------",
-    "HELLO": "hello",
+    "PickUsername": "Please choose a username:",
+    "Connect": "Connect",
     "-ChatRoom":"---------------------",
-    "-AboutPage":"---------------------",
-    "-DashBoard":"---------------------",
-    "Welcome2Dashboard": "Welcome to the dashboard",
-    "UsersSection": "Users Section"
+    "ChatPlaceHolder":"Type a message here...",
+    "-Lang":"---------------------",
+    "Lang":"Choose your language"
 }

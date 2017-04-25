@@ -7,6 +7,10 @@ import { UserService } from '../shared/services/user.service';
 
 @Component({
   selector: 'home-page',
+  styles:[`
+  input {
+    margin-bottom: 5px;
+  }`],
   templateUrl: './home.component.html'
 })
 export class HomeComponent {
