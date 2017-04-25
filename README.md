@@ -46,3 +46,9 @@ $ rm -rf target/ play-reactive-mongo-db-1.0-SNAPSHOT/ public/
 $ sbt dist
 $ sbt docker:publishLocal
 ```
+
+docker compose
+
+```
+$ docker-compose up -d
+```
