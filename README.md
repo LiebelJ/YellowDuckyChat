@@ -1,16 +1,7 @@
 # YellowDuckyChat
 visit - http://aws.yellowducky.co:8080/
 
-view all "persons"
-```
-http://aws.yellowducky.co:8080/api/persons
-```
-
-insert into the db
-```
-$ curl -H "Content-Type: application/json" -X POST -d '{"name":"John","age": 22}' http://aws.yellowducky.co:8080/api/persons/
-```
-
+## Webpack plugins needed in frontend
 
 Loaders
 ```
@@ -32,6 +23,11 @@ Extra libraries
 $ npm install moment include-media bootstrap --save
 ```
 
+npm install
+```
+$ npm install
+```
+
 
 ## Docker
 
@@ -46,7 +42,7 @@ create sbt (backend) docker image
 
 ```
 $ cd backend
-$ rm -rf target/ play-reactive-mongo-db-1.0-SNAPSHOT/
+$ rm -rf target/ play-reactive-mongo-db-1.0-SNAPSHOT/ public/
 $ sbt dist
 $ sbt docker:publishLocal
 ```
