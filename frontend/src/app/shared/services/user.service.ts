@@ -37,7 +37,7 @@ export class UserService {
 
         return this.http.post("/api/chat/upload", data, { headers: headers })
         .subscribe(data=> {
-            alert('ok');
+            console.log("sent");
         },
         error => {
             console.log("error");

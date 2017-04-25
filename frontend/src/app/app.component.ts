@@ -26,7 +26,6 @@ export class AppComponent {
   selectLang(){
     let dialoRef = this.dialog.open(LangComponent);
       dialoRef.afterClosed().subscribe(result => {
-    this.selectedLang = result;
     this._snackbar.open('Ok!'+'', 'X'); 
     })
   }
