@@ -50,9 +50,7 @@ export class SearchComponent {
    find(){
      if(this.SearchBox){
        this.messages = [];
-       console.log("finding message: " + this.SearchBox);
         this.messages.push(this.userService.getMessage(this.SearchBox));
-        console.log(this.messages)
         this.SearchBox="";
      }
    }

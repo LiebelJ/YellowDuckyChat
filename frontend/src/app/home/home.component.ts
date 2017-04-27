@@ -20,7 +20,6 @@ constructor(private router: Router, private userService: UserService) { }
 
   connect(){
     if(this.username){
-      console.log("> " + this.username);
       this.userService.setUser(this.username);
       this.router.navigateByUrl('/chatroom');
     }
