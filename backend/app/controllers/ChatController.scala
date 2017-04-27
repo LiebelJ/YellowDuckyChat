@@ -45,13 +45,13 @@ class ChatController @Inject()(val reactiveMongoApi: ReactiveMongoApi)(implicit 
     }
   }
 
-  def findByName(name: String) = Action.async {
+  def findMessage(message: String) = Action.async {
     // let's do our query
     val cursor: Future[List[JsObject]] = chatsFuture.flatMap{ chats =>
       // find all people with name `name`
-      chats.find(Json.obj("name" -> name)).
+      chats.find(Json.obj("message" -> message)).
       // sort them by creation date
-      sort(Json.obj("created" -> -1)).
+      sort(Json.obj("timestamp" -> -1)).
       // perform the query and get a cursor of JsObject
       cursor[JsObject](ReadPreference.primary).collect[List]()
   }

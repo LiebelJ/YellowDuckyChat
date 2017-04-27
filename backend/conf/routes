@@ -1,5 +1,6 @@
 POST     /api/chat/upload               controllers.ChatController.createFromJson
 GET      /api/chat/download             controllers.ChatController.findAll()
+GET      /api/chat/getMessage           controllers.ChatController.findMessage(message: String)
 
 POST     /api/persons/add               controllers.PersonController.create(name: String, age: Int)
 POST     /api/persons/                  controllers.PersonController.createFromJson
