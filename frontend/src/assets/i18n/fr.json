@@ -2,11 +2,14 @@
     "-NavBar":"---------------------",
     "HOME":"Accueil",
     "CHAT":"Chatter",
+    "SEARCH":"Rechercher",
     "-HomePage":"---------------------",
     "PickUsername": "Choisissez un nom d'utilisateur:",
     "Connect": "Connecter",
     "-ChatRoom":"---------------------",
     "ChatPlaceHolder":"Tapez un message ici ...",
     "-Lang":"---------------------",
-    "Lang":"Choisissez votre langue"
+    "Lang":"Choisissez votre langue",
+    "-Search":"---------------------",
+    "SearchPlaceHolder":"Tapez ici pour rechercher ..."
 }
