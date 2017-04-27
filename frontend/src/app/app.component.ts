@@ -3,6 +3,7 @@ import {TranslateService} from 'ng2-translate';
 
 import {MdDialog, MdDialogRef,MdSnackBar} from '@angular/material';
 import { LangComponent } from './lang/lang.component';
+import { SearchComponent } from './search/search.component';
 
 @Component({
   selector: 'app-root',
@@ -27,6 +28,12 @@ export class AppComponent {
     let dialoRef = this.dialog.open(LangComponent);
       dialoRef.afterClosed().subscribe(result => {
     this._snackbar.open('Ok!'+'', 'X'); 
+    })
+  }
+
+  search(){
+    let dialoRef = this.dialog.open(SearchComponent);
+      dialoRef.afterClosed().subscribe(result => {
     })
   }
 }

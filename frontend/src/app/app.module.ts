@@ -5,7 +5,7 @@ import { appRouting } from './app.routing';
 import { AppComponent } from './app.component';
 import { LangComponent } from './lang/lang.component';
 import { HomeComponent } from './home/home.component';
-import { ContactComponent } from './contact/contact.component';
+import { SearchComponent } from './search/search.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AuthGuard } from './shared/guards/auth-guard.service';
 import { CanDeactivateGuard } from './shared/guards/can-deactivate-guard.service';
@@ -15,8 +15,10 @@ import { ChatroomService } from './shared/services/chatroom.service';
 import { UserService } from './shared/services/user.service';
 import { LangService } from './shared/services/lang.service';
 
+
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MaterialModule} from '@angular/material';
+import 'hammerjs';
 
 import {HttpModule, Http} from '@angular/http';
 import {TranslateModule, TranslateLoader, TranslateStaticLoader, TranslateService} from 'ng2-translate';
@@ -42,10 +44,10 @@ export function createTranslateLoader(http: Http) {
   declarations: [
     AppComponent,
     HomeComponent,
-    ContactComponent,
+    SearchComponent,
     NotFoundComponent,
     ChatroomComponent,
-    LangComponent
+    LangComponent,
   ],
   providers: [
     AuthGuard,

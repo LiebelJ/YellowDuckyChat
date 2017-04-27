@@ -7,11 +7,29 @@ import "rxjs/Rx";
 @Injectable()
 export class UserService {
   persons: Array<any> = [];
+  messages: Array<any> = [];
 
     constructor(private http: Http) { 
         
     }
-  
+
+  getMessage(message){
+    console.log("fetching");
+    this.messages = [];
+        this.http.get("/api/chat/getMessage?message="+message)
+        .map( result => result.json())
+        .flatMap(result => result)
+        .subscribe(
+            result => {
+                this.messages.push((result));
+            },
+            error => {
+                console.error(error);
+            }
+        );
+     return this.messages;
+  }
+
   getChat(){
         console.log("fetching");
         this.http.get("/api/chat/download")
@@ -31,9 +49,9 @@ export class UserService {
         var headers = new Headers();
         headers.append('Content-Type', 'application/json');
 
-        let body = 'author='+data.author+'&message='+data.message+'&timestamp='+data.timestamp;
+    //     let body = 'author='+data.author+'&message='+data.message+'&timestamp='+data.timestamp;
 
-       console.log(data);
+    //    console.log(data);
 
         return this.http.post("/api/chat/upload", data, { headers: headers })
         .subscribe(data=> {
