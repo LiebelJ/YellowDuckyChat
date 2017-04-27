@@ -1,6 +1,6 @@
-name := """YellowDuckyChat-Backend"""
+name := """yellowduckychat-backend"""
 
-version := "1.0.1"
+version := "latest"
 
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
