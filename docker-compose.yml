@@ -2,7 +2,7 @@ version: '2'
 
 services:
    webapp:
-     image: YellowDuckyChat-Backend:latest
+     image: YellowDuckyChat-Backend:1.0.1
      ports:
        - "8080:9000"
      depends_on:
