@@ -5,6 +5,8 @@ import '@angular/http';
 import '@angular/router';
 import '@angular/core';
 import '@angular/common';
+import '@angular/material';
+import '@angular/animations';
 
 // RxJS - comment it our if not using or import specific functions
 import 'rxjs';
