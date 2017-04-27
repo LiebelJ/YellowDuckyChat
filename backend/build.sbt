@@ -1,6 +1,6 @@
-name := """play-reactive-mongo-db"""
+name := """YellowDuckyChat-Backend"""
 
-version := "1.0-SNAPSHOT"
+version := "latest"
 
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
