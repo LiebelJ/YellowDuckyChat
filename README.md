@@ -1,5 +1,5 @@
 # YellowDuckyChat
-visit - http://aws.yellowducky.co:8080/
+visit - http://aws.yellowducky.co/
 
 Use lazy script to install npm packages, docker images, and starting docker-compose
 Use at your own risk! :)
