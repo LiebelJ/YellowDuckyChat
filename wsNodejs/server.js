@@ -24,7 +24,7 @@ wsServer = new WebSocketServer({
 
 function originIsAllowed(origin) {
     // put logic here to detect whether the specified origin is allowed. 
-    valid_origins = ['http://localhost:4200','http://localhost:9000','http://aws.yellowducky.co'];
+    valid_origins = ['http://localhost:4200','http://localhost:9000','http://aws.yellowducky.co',http://aws.stillz.net];
     console.log('Valid origins: ' + valid_origins);
     if (valid_origins.indexOf(origin) != -1) {
         console.log('Connection accepted from origin ' + origin);
